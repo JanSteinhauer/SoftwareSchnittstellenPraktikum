@@ -1,0 +1,52 @@
+@()
+
+@defining(play.core.PlayVersion.current) { version =>
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            @header()
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/game.css")">
+        <title>Project Coffee</title>
+        </head>
+        <body>
+            <div>
+                @navbar()
+                <div class="tools">
+                    <div class="bean_bag">
+
+                        <img id="bean_bag"  src="@routes.Assets.versioned("images/beanbag.png")" alt="Kaffeemaschine">
+                        <img id="shovel"  src="@routes.Assets.versioned("images/shovel.png")" alt="Kaffeemaschine">
+
+                    </div>
+                    <div class="scale">
+                        <img id="scale"  src="@routes.Assets.versioned("images/waage.png")" alt="Kaffeemaschine">
+                        <p id="gram">0</p>
+                    </div>
+                    <div class="maschine">
+                        <img id="maschine" src="@routes.Assets.versioned("images/kaffeemaschine.png")" alt="Kaffeemaschine">
+                        <div class="timer">
+                            <div id="timer">00:00:000</div>
+                            <button id="startStopBtn">Start</button>
+                        </div>
+                        <img id="siebtraeger" src="@routes.Assets.versioned("images/siebtraeger.png")" alt="Siebtraeger">
+                    </div>
+
+
+                </div>
+
+                @*<div class="square">
+                    <h1 class="game1">Game 1</h1>
+                    <div class="behaelter" style="margin-top: 4rem">
+                        <div class="slot">
+                            <img src="@routes.Assets.versioned("images/bean_black.png")" draggable="true"
+                            class="test" id="beispielbild" style="width: 50%; height: 50%" alt="blackBean">
+                        </div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                    </div>
+                </div>*@
+            </div>
+        </body>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/drag-and-drop.js")"></script>
+    </html>
+}

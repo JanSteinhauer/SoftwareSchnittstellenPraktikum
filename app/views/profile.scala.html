@@ -1,0 +1,46 @@
+@(email: String)
+
+    @defining(play.core.PlayVersion.current) { version =>
+    <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                @header()
+                <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/blur.css")">
+                <title>Project Coffee</title>
+            </head>
+            <body>
+                <div>
+                    @navbar()
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"
+                                alt="rover"/>
+                            </div>
+                            <div class="card-body">
+                                <div class="offset">
+                                    <img id="profile-image" class="round"
+                                    src="https://i.pinimg.com/originals/eb/4f/4a/eb4f4a196776660182e47719a65d44fd.jpg" alt="user"/>
+                                    <h3 id="username"></h3>
+                                    <h4 id="mail">@email</h4>
+                                    <div class="achievements">
+                                        <h4>Achievements</h4>
+                                        <ul>
+                                            <li>10 Flat whites</li>
+                                            <li>Junior Barista</li>
+                                            <li>Coffee 101</li>
+                                        </ul>
+                                    </div>
+                                    <div class="friendlist">
+                                        <h4>Friends</h4>
+                                        <ul id="friends"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            <script type="text/javascript" src="@routes.Assets.versioned("javascripts/profile.js")"></script>
+        </html>
+    }

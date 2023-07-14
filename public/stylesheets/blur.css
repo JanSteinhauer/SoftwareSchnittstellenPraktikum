@@ -1,0 +1,46 @@
+body {
+    background: url("../images/background_blur_black.png") no-repeat;
+    background-size: cover;
+}
+
+#timer {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#startStopBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: yellow;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#maschine {
+    width: 500px;
+    height: 600px;
+}
+
+.maschine {
+    position: relative;
+    left: 300px;
+}
+
+.timer {
+    position: absolute;
+    top: 85px;
+    left: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#siebtraeger {
+    position: absolute;
+    top: 150px;
+    left: -160px;
+    width: 450px;
+    height: 150px;
+}

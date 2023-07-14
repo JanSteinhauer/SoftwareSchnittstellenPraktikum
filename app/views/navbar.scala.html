@@ -1,0 +1,30 @@
+@()
+@defining(play.core.PlayVersion.current) { version =>
+    <div class="topnav">
+        <a href="@routes.HomeController.main">
+            <img id="font-logo-white" alt="logo" src="@routes.Assets.versioned("images/font-logo-white.png")">
+        </a>
+            <!-- at routes.HomeController.index#Introduction -->
+        <a class="nav-item" href="@routes.HomeController.main">Home</a>
+        <a class="nav-item" href="@routes.HomeController.profile">Profil</a>
+        <a class="nav-item" href="@routes.HomeController.highscore">Highscore</a>
+        <a class="nav-item" href="@routes.HomeController.game1">Game 1</a>
+        <a class="nav-item" id="logout" href="#" onclick="logout()"><i class="fa fa-fw fa-sign-out"></i>
+            Logout</a>
+    </div>
+    <script>
+            function logout() {
+                fetch("/logout", {
+                    method: "GET",
+                    credentials: "same-origin"
+                }).then(response => {
+                    if (response.redirected) {
+                        sessionStorage.removeItem("username");
+                        window.location.href = response.url;
+                    } else {
+                        console.log("Error Occured!")
+                    }
+                });
+            }
+    </script>
+}

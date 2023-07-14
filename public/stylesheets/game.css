@@ -1,0 +1,99 @@
+body {
+    background: url("../images/LeerHintergrund.png") no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 200px;
+}
+
+#timer {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#startStopBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: yellow;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#gram{
+    padding-top:535px;
+    position:absolute;
+    left:557px;
+    font-size:50px;
+}
+#maschine {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    left: 700px;
+}
+
+.maschine {
+    position: relative;
+    left: 450px;
+    bottom: 0px;
+    transform: scale(0.5);
+    margin-top: 400px;
+}
+
+.scale {
+    position: relative;
+   /* transform: scale(0.2);*/
+
+}
+
+.bean_bag {
+    position: relative;
+
+    /*transform: scale(0.2);*/
+
+
+}
+
+#bean_bag {
+    width: 150px;
+    padding-top: 500px;
+    position: absolute;
+    pointer-events: none;
+}
+
+#scale{
+    width: 150px;
+    padding-top: 500px;
+    position: absolute;
+    left: 500px;
+}
+
+#shovel{
+    width: 60px;
+    padding-top: 500px;
+    position: absolute;
+    left: 90px;
+}
+
+.tools{
+    display: flex;
+}
+
+
+.timer {
+    position: absolute;
+    top: 85px;
+    left: 860px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#siebtraeger {
+    position: absolute;
+    top: 150px;
+    left: 540px;
+    width: 450px;
+    height: 150px;
+}

@@ -1,0 +1,33 @@
+@()
+
+@defining(play.core.PlayVersion.current) { version =>
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            @header()
+        <title>Project Coffee</title>
+        </head>
+        <body>
+            <div>
+                <div class="authentication-screen-box primary-color">
+                    <img id="logo-white-login" alt="logo" src="@routes.Assets.versioned("images/logo-white.png")">
+                    <div class="authentication-box">
+                        <h2>Login</h2>
+                        <form method="post">
+                            <input type="text" id="username" name="username" placeholder="Benutzername">
+
+                            <input type="password" id="password" name="password" placeholder="Passwort">
+                            <i class="far fa-eye" id="togglePassword"></i>
+
+                        </form>
+                        <span id="login-error" class="error-box">Falsches Passwort oder Benutzername</span>
+                        <button class="button-color" id="login-btn" onclick="login()" type="button">Anmelden</button>
+                        <p id="or-login">oder</p>
+                        <button id="register-btn-font-only">Registrieren</button>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/login.js")"></script>
+    </html>
+}

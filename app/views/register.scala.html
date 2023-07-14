@@ -1,0 +1,32 @@
+@()
+    @defining(play.core.PlayVersion.current) { version =>
+    <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                @header()
+                <title>Project Coffee</title>
+            </head>
+            <body>
+                <div>
+                    <div class="authentication-screen-box primary-color">
+                        <img id="logo-white-login" alt="logo" src="@routes.Assets.versioned("images/logo-white.png")">
+                        <div class="authentication-box">
+                            <h2>Registrieren</h2>
+                            <form>
+                                <!--<input type="text" id="name" name="name" placeholder="Vorname">
+                                <input type="text" id="surname" name="surname" placeholder="Nachname"> -->
+                                <input type="text" id="username" name="username" placeholder="Benutzername">
+                                <input type="email" id="email" name="email" placeholder="E-Mail">
+                                <input type="password" id="password" name="password" placeholder="Passwort">
+                                <i class="far fa-eye" id="togglePassword"></i>
+                            </form>
+                            <span id="login-error" class="error-box"></span>
+                            <button class="button-color" onclick="register1()" id="register-btn">Registrieren</button>
+                            <a href="@routes.HomeController.login"><p id="or-login">zurück</p></a>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            <script type="text/javascript" src="@routes.Assets.versioned("javascripts/register.js")"></script>
+        </html>
+    }

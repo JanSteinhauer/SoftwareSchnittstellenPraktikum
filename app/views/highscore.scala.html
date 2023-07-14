@@ -1,0 +1,90 @@
+@(names: java.util.List[String], scores: java.util.List[Integer], username: String)
+
+@defining(play.core.PlayVersion.current) { version =>
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            @header()
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/blur.css")">
+        <title>Project Coffee</title>
+        </head>
+        <body>
+            <div>
+                @navbar()
+                <div class="container">
+
+                    <div class="card">
+                        <h1>Highscores</h1>
+                        @for(index <- 0 until names.size) {
+
+
+                            <div class="user">
+                                    <!--<img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/44/1477933942-doctor-strange-movie-composer-cumberbatch.jpg?crop=0.502xw:1.00xh;0.269xw,0&resize=480:*"
+                          alt="user"/>-->
+                                <div class="user-info">
+                                    @if(index.==(5)) {
+                                        @if(names(index).equals(username)) {
+                                            <h2>User</h2>
+                                        } else {
+                                            <h2>@(index + 1) </h2>
+                                        }
+                                    } else {
+                                        <h2>@(index + 1) </h2>
+                                    }
+                                    @if(names(index) == "") {
+                                        <h3 id="highscore-key-first">Unknown</h3>
+                                    } else {
+                                        <h3 id="highscore-key-first">@names(index)</h3>
+                                    }
+                                <p id="highscore-value-first">@scores(index)</p>
+
+                                </div>
+                            </div>
+
+                        }
+
+
+                        @*<div class="user">
+                        <!--<img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/44/1477933942-doctor-strange-movie-composer-cumberbatch.jpg?crop=0.502xw:1.00xh;0.269xw,0&resize=480:*"
+                        alt="user"/>-->
+                        <div class="user-info">
+                        <h2>1st</h2>
+                        <h3 id="highscore-key-first">Name</h3>
+                        <p id="highscore-value-first">100</p>
+                        </div>
+                        </div>
+                        <div class="user">
+                        <!--<img src="https://static01.nyt.com/images/2021/09/30/business/00disney-2/00disney-2-mediumSquareAt3X.jpg"
+                        alt="user"/>-->
+                        <div class="user-info">
+                        <h2>2nd</h2>
+                        <h3 id="highscore-key-second">Name</h3>
+                        <p id="highscore-value-second">100</p>
+                        </div>
+                        </div>
+                        <div class="user">
+                        <!--<img src="https://pyxis.nymag.com/v1/imgs/711/992/eaf3d9aa86ceff87de2ff6ad7f98fa4953-ant-man-scene-1.rsquare.w700.jpg"
+                        alt="user"/>-->
+                        <div class="user-info">
+                        <h2>3rd</h2>
+                        <h3 id="highscore-key-third">Name</h3>
+                        <p id="highscore-value-third">100</p>
+                        </div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="maschine">
+                <img id="maschine" src="@routes.Assets.versioned("images/kaffeemaschine.png")" alt="Kaffeemaschine">
+                <div class="timer">
+                    <div id="timer">00:00:000</div>
+                    <button id="startStopBtn">Start</button>
+                </div>
+                <img id="siebtraeger" src="@routes.Assets.versioned("images/siebtraeger.png")" alt="Siebtraeger">
+            </div>
+        </body>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/highscore.js")"></script>
+    </html>
+}
